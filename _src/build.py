@@ -12,6 +12,18 @@ SECTIONS = [
   ("B0GPN9R146","✨","Happi Planet Magic Eraser (Pack of 4)","Diwali deep-cleaning for walls, switchboards & tiles"),
   ("B0BBFCG66M","🪔","DesiDiya LED Pixel String Lights (Warm White, ~10 m)","Budget balcony, mirror & pooja-corner glow"),
  ]),
+ ("sale", "🎉 Great Indian Festival Picks", [
+  ("B0DYDPBM8K","📱","Samsung Galaxy A56 5G (8 GB / 128 GB)","50MP triple camera with AI photo-editing features"),
+  ("B0FMDL81GS","🎧","OnePlus Nord Buds 3r TWS Earbuds","2-mic clear calls & 3D spatial audio"),
+  ("B0BJ72WZQ7","⌚","Noise Twist Round-Dial Smartwatch","Bluetooth calling with 100+ watch faces"),
+  ("B09B8XJDW5","🔊","Amazon Echo Dot (5th Gen) Smart Speaker","Alexa for music, reminders & smart-home control"),
+  ("B0FH569G3V","🍟","Lifelong Smartchoice 4.2 L Digital Air Fryer","7 preset menus, touch panel, non-stick basket"),
+  ("B0CHJNJJDP","🌀","atomberg Renesa Enzel 1200 mm BLDC Ceiling Fan","BLDC motor fan with remote & LED speed indicator"),
+  ("B0DCZ3WDTB","🔋","Xiaomi Power Bank 4i 20000 mAh","33 W fast charging, Type-C in & out"),
+  ("B0F84FBWQM","📺","Samsung 32-inch HD Smart LED TV","Compact smart TV for bedroom or hall"),
+  ("B0F3JH6RTG","📿","PALMONAS 18k Gold Plated Beaded Bliss Necklace","Listed as waterproof & anti-tarnish, an easy gift"),
+  ("B0DHSBBV6R","🏎️","LEGO Speed Champions Ferrari SF-24 F1 Car (77242)","Building set for ages 10+"),
+ ], "Sale deals change fast — check today's price on Amazon.in."),
  ("diwali-decor", "🪔 Diwali Décor & Lights", [
   ("B0DFZ579HK","💧","PulGos Water Sensor LED Diyas (36 pcs)","Reusable diyas that glow when placed in water, no smoke"),
   ("B0CVGY985K","🍃","One94Store Leaf Curtain Lights (200 LED, 3×1 m)","Warm-white curtain with remote for windows & walls"),
@@ -37,8 +49,15 @@ SECTIONS = [
   ("B0DN1RWNSQ","🌌","One94Store Nebula Star Projector Night Light","Galaxy room makeover, great kids' gift"),
   ("B008XT42JU","🔌","GM 3060 Extension Board (4 Sockets, 2 m)","Master switch & safety shutters, handy for Diwali lights"),
   ("B078S7CDLT","🥡","Borosil Klip N Store Square Glass Containers (Set of 2)","Air-tight glass boxes for sweets & leftovers"),
+  ("B0F54GKQ38","♨️","Milton Rapid Electric Kettle 1.8 L","1500 W stainless-steel kettle for tea & noodles"),
+  ("B0B257ZYVB","🥚","AGARO Grand Egg Boiler & Poacher","Boils 8 eggs or poaches 4, also steams veggies"),
+  ("B09J2T124D","🥤","NutriPro Juicer Mixer Grinder 500 W","2 jars for smoothies, juices & chutneys"),
  ]),
  ("gadgets", "🎧 Gadgets & Tech", [
+  ("B0FBRGKXHG","🎵","OnePlus Bullets Wireless Z3 Neckband","12.4 mm drivers, quick 10-minute charge"),
+  ("B0FLF44GTQ","⌚","boAt Wave Call 3 Smartwatch","1.83-inch display with Bluetooth calling"),
+  ("B0DNFSSF3F","💾","SanDisk Ultra Dual Drive Go Type-C 128 GB","Pendrive to free up phone storage"),
+  ("B0D9S87H53","🧲","Ambrane MagSafe Wireless Power Bank 10000 mAh","Magnetic snap-on charging, 22.5 W output"),
   ("B0FDQ9M1SD","🖱️","Portronics Toad 8 Transparent Wireless Mouse","See-through desk-setup look, BT + 2.4 GHz"),
   ("B08TV2P1N8","🎶","boAt Rockerz 255 Pro+ Neckband","Sale-season gift pick"),
   ("B0F63BY6LT","🤳","Kratos K9 Selfie Stick Tripod with Light","Family photos & rangoli time-lapses"),
@@ -51,6 +70,14 @@ SECTIONS = [
   ("B0CND1VF2W","💋","WishCare Tinted Lip Balm SPF 50 PA++++","Tint + SPF for festive outdoor days"),
   ("B08FW1GJ4F","💇","L'Oréal Paris Extraordinary Oil Hair Serum 100 ml","Festive hair styling, hamper add-on"),
   ("B09FPS9D5T","🧴","Minimalist Sunscreen SPF 50 PA++++","Niacinamide sunscreen for everyday use"),
+  ("B00YJJWBUA","💄","Maybelline Color Sensational Creamy Matte Lipstick","Festive-look lipstick in many shades"),
+  ("B01CCGW4OE","🫧","Cetaphil Gentle Skin Hydrating Face Wash 118 ml","Paraben- & sulphate-free gentle cleanser"),
+  ("B08M4T5FJG","🧴","Vaseline Deep Moisture Body Lotion","Ceramide lotion for dry winter skin"),
+ ]),
+ ("toys", "🧸 Toys & Kids", [
+  ("B09VC3KD86","✏️","Portronics Ruffpad 12M LCD Writing Pad","Re-writable 12-inch pad with one-tap erase"),
+  ("B00004TZY8","🃏","Mattel UNO Card Game","Classic family game for Diwali get-togethers"),
+  ("B0GQ89XY15","🧩","Storio 3D Magnetic Tiles (28 pcs)","STEM building toy for ages 3–8"),
  ]),
 ]
 
@@ -59,7 +86,7 @@ e = html.escape
 
 # ---- JSON-LD
 items=[]; seen=set()
-for _,_,ps in SECTIONS:
+for _,_,ps,*_ in SECTIONS:
     for a,_,n,_ in ps:
         if a in seen: continue
         seen.add(a); items.append({"@type":"ListItem","position":len(items)+1,"name":n,"url":link(a)})
@@ -87,9 +114,10 @@ header{text-align:center;margin:18px 0 6px}header img{width:96px;height:96px;bor
 nav{display:flex;gap:8px;overflow-x:auto;padding:6px 2px 8px;margin:4px -2px 0;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{flex:none;text-decoration:none;font-size:13px;font-weight:600;color:#7c2d12;background:#fff;border:1px solid #fed7aa;padding:6px 12px;border-radius:16px}
 section{scroll-margin-top:10px}h2{font-size:16px;margin:22px 4px 8px}.card{display:flex;gap:12px;align-items:center;background:#fff;border-radius:16px;padding:12px;margin:8px 0;text-decoration:none;color:inherit;box-shadow:0 2px 8px #0001;transition:transform .1s}.card:active{transform:scale(.98)}
 .ic{font-size:28px;width:52px;height:52px;flex:none;display:grid;place-items:center;background:#fff3e0;border-radius:12px}.tx b{display:block;font-size:15px}.tx span{display:block;font-size:13px;color:#666;margin:2px 0 6px}.tx em{font-style:normal;font-size:13px;font-weight:700;color:#c2410c}
+.note{font-size:12.5px;color:#7c2d12;background:#fff7ed;border:1px dashed #fdba74;border-radius:10px;padding:6px 10px;margin:-2px 0 6px}
 footer{text-align:center;font-size:12px;color:#666;margin-top:26px;line-height:1.6}"""
 
-NAVLBL={"featured":"🔥 Featured","diwali-decor":"🪔 Diwali Décor","pooja":"🙏 Pooja","gifts":"🎁 Gifts","home-kitchen":"🏠 Home","gadgets":"🎧 Gadgets","beauty":"💄 Beauty"}
+NAVLBL={"featured":"🔥 Featured","sale":"🎉 Sale Picks","toys":"🧸 Toys","diwali-decor":"🪔 Diwali Décor","pooja":"🙏 Pooja","gifts":"🎁 Gifts","home-kitchen":"🏠 Home","gadgets":"🎧 Gadgets","beauty":"💄 Beauty"}
 
 h=[]
 h.append('<!doctype html><html lang="en-IN"><head>\n<meta name="google-site-verification" content="OB4e0H9pxlt7TmiGBKKGOR5DMOq12e8H9PZWltPUVYI" /><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">')
@@ -102,11 +130,12 @@ h.append('<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False,
 h.append(f'<style>{CSS}</style></head><body><div class="w">')
 h.append('<div class="ad">#ad | As an Amazon Associate I earn from qualifying purchases.</div>')
 h.append('<header><img src="avatar.jpg" width="96" height="96" alt="JC Smart Picks logo"><h1>JC Smart Picks</h1><p class="tag">Trending Amazon.in finds, handpicked for you 🛒</p></header>')
-h.append('<p class="intro">JC Smart Picks shares handpicked <strong>Amazon finds for India</strong>: trending gadgets, home &amp; kitchen helpers, beauty picks and <strong>Diwali gifts &amp; décor</strong>, explained in short Telugu videos on Instagram and YouTube. Tap any card to check today\'s price on Amazon.in.<span class="te" lang="te">తెలుగులో షార్ట్ వీడియోలు, Instagram &amp; YouTube లో 👇</span></p>')
+h.append('<p class="intro">JC Smart Picks shares handpicked <strong>Amazon finds for India</strong>: <strong>Great Indian Festival</strong> sale picks, trending gadgets, home &amp; kitchen helpers, beauty, toys and <strong>Diwali gifts &amp; décor</strong>, explained in short Telugu videos on Instagram and YouTube. Tap any card to check today\'s price on Amazon.in.<span class="te" lang="te">తెలుగులో షార్ట్ వీడియోలు, Instagram &amp; YouTube లో 👇</span></p>')
 h.append('<div class="so"><a class="ig" href="https://www.instagram.com/jcsmartpicks" target="_blank" rel="noopener me">📸 Instagram</a><a class="yt" href="https://www.youtube.com/@jcsmartpicks" target="_blank" rel="noopener me">▶ YouTube</a></div>')
-h.append('<nav aria-label="Sections">'+''.join(f'<a href="#{sid}">{NAVLBL[sid]}</a>' for sid,_,_ in SECTIONS)+'</nav>')
-for sid,title,ps in SECTIONS:
+h.append('<nav aria-label="Sections">'+''.join(f'<a href="#{sid}">{NAVLBL[sid]}</a>' for sid,_,_,*_ in SECTIONS)+'</nav>')
+for sid,title,ps,*note in SECTIONS:
     h.append(f'<section id="{sid}"><h2>{e(title,quote=False)}</h2>')
+    if note: h.append(f'<p class="note">{e(note[0],quote=False)}</p>')
     for a,ic,n,d in ps:
         h.append(f'<a class="card" href="{link(a)}" target="_blank" rel="sponsored noopener"><div class="ic" aria-hidden="true">{ic}</div><div class="tx"><b>{e(n,quote=False)}</b><span>{e(d,quote=False)}</span><em>Check today\'s price on Amazon.in →</em></div></a>')
     h.append('</section>')

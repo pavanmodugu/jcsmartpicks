@@ -92,7 +92,7 @@ footer{text-align:center;font-size:12px;color:#666;margin-top:26px;line-height:1
 NAVLBL={"featured":"🔥 Featured","diwali-decor":"🪔 Diwali Décor","pooja":"🙏 Pooja","gifts":"🎁 Gifts","home-kitchen":"🏠 Home","gadgets":"🎧 Gadgets","beauty":"💄 Beauty"}
 
 h=[]
-h.append('<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">')
+h.append('<!doctype html><html lang="en-IN"><head>\n<meta name="google-site-verification" content="OB4e0H9pxlt7TmiGBKKGOR5DMOq12e8H9PZWltPUVYI" /><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">')
 h.append(f'<title>{e(TITLE)}</title><meta name="description" content="{e(DESC)}"><meta name="keywords" content="{e(KEYS)}">')
 h.append(f'<meta name="robots" content="index,follow,max-image-preview:large"><meta name="author" content="JC Smart Picks"><meta name="theme-color" content="#13254f"><link rel="canonical" href="{BASE}">')
 h.append(f'<link rel="icon" href="{BASE}favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="logo-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">')

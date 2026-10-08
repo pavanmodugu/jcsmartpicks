@@ -14,19 +14,19 @@ IG = "https://www.instagram.com/jcsmartpicks"; YT = "https://www.youtube.com/@jc
 VIDEOS = [("https://youtube.com/shorts/WYM-mqx5p74","t1","🎁","Amma ki Diwali Gift Ideas – Top 3 Amazon.in Finds","YouTube Short · Telugu"),
           ("https://youtube.com/shorts/-Fv5NBJ2yGA","t2","🧽","Diwali Cleaning With Just Water? Magic Eraser Find","YouTube Short · Telugu"),
           (IG,"t3","📸","Follow @jcsmartpicks on Instagram","Reels · new finds every week")]
-CHIP = {"featured":"▶ In our videos","sale":"🎉 Sale Picks","diwali-decor":"🪔 Diwali Décor","pooja":"🙏 Pooja","gifts":"🎁 Gifts",
+CHIP = {"featured":"▶ In our videos","sale":"🎉 Sale Picks","budget":"💰 Budget Best","premium":"💎 Premium Picks","diwali-decor":"🪔 Diwali Décor","pooja":"🙏 Pooja","gifts":"🎁 Gifts",
         "home-kitchen":"🏠 Home & Kitchen","gadgets":"🎧 Gadgets","beauty":"💄 Beauty","toys":"🧸 Toys"}
-BADGE = {"featured":"▶ In our videos","sale":"🎉 Sale pick","diwali-decor":"🪔 Diwali pick","pooja":"🪔 Diwali pick","gifts":"🎁 Gift idea",
+BADGE = {"featured":"▶ In our videos","sale":"🎉 Sale pick","budget":"💰 Budget best","premium":"💎 Premium","diwali-decor":"🪔 Diwali pick","pooja":"🪔 Diwali pick","gifts":"🎁 Gift idea",
          "home-kitchen":"🔥 Trending","gadgets":"🔥 Trending","beauty":"✨ Trending","toys":"🧸 Kids pick"}
-KW = {"featured":"video featured diwali","sale":"great indian festival sale deal offer","diwali-decor":"diwali deepavali decoration decor lights light festival",
+KW = {"featured":"video featured diwali","sale":"great indian festival sale deal offer","budget":"budget affordable cheap value smart buy pocket friendly","premium":"premium luxury upgrade flagship high end","diwali-decor":"diwali deepavali decoration decor lights light festival",
       "pooja":"pooja puja diwali rangoli mandir festival","gifts":"gift gifts hamper present diwali bhai dooj amma sister",
       "home-kitchen":"home kitchen appliance cooking","gadgets":"gadget gadgets tech electronics mobile phone accessories",
       "beauty":"beauty skincare skin care makeup hair","toys":"toys kids children game"}
 OCC = {  # "Shop by occasion" groups (ASIN lists)
- "amma": "B0H71SYY4J B09F8G2BDX B0DSZH4Y1H B0F54GKQ38 B0F8HJJVW1 B0C897PVVM B078S7CDLT B08FW1GJ4F B08M4T5FJG B0F3JH6RTG B0B63HWLGL B09B8XJDW5 B0B257ZYVB B09J2T124D B0FH569G3V B0H155N39C B0CND1VF2W B01CCGW4OE".split(),
+ "amma": "B0H71SYY4J B09F8G2BDX B0DSZH4Y1H B0F54GKQ38 B0F8HJJVW1 B0C897PVVM B078S7CDLT B08FW1GJ4F B08M4T5FJG B0F3JH6RTG B0B63HWLGL B09B8XJDW5 B0B257ZYVB B09J2T124D B0FH569G3V B0H155N39C B0CND1VF2W B01CCGW4OE B0D3VDV73J B00A7PLVU6 B07VKM2HR5 B09L7QWYC3 B00JDACK3S".split(),
  "decor": None, "tech": None, "kids": "B0DHSBBV6R B0DN1RWNSQ B09VC3KD86".split(),
 }
-TECH_SALE = "B0DYDPBM8K B0FMDL81GS B0BJ72WZQ7 B09B8XJDW5 B0DCZ3WDTB B0F84FBWQM".split()
+TECH_SALE = "B0DYDPBM8K B0FMDL81GS B0BJ72WZQ7 B09B8XJDW5 B0DCZ3WDTB B0F84FBWQM B0DSKNKCYX B0DGJHBX5Y B0BZP2H373 B0CT3SGHXL B0FNWNZZ1B B0DKTZ6592 B0F3JL33DW B09ZPL5VYM B08LHTJTBB".split()
 
 def link(a): return f"https://www.amazon.in/dp/{a}?tag={TAG}"
 e = lambda s: html.escape(s, quote=True)
@@ -57,8 +57,8 @@ ld = {"@context":"https://schema.org","@graph":[
 ]}
 
 TITLE = "JC Smart Picks – Handpicked Amazon.in Finds | Trending Deals & Diwali Gifts"
-DESC = "JC Smart Picks: handpicked Amazon.in finds – trending gadgets, home & kitchen helpers, beauty picks, Diwali lights, pooja items & gift ideas. Telugu Shorts."
-KEYS = "JC Smart Picks, jcsmartpicks, Amazon finds India, Amazon.in finds, trending gadgets, viral Amazon products, Diwali gifts, Diwali decoration lights, pooja items, home and kitchen gadgets, Telugu Amazon finds, Great Indian Festival picks"
+DESC = "JC Smart Picks: handpicked Amazon.in finds – budget buys, premium upgrades, trending gadgets, Diwali lights, pooja items & gift ideas. Telugu Shorts."
+KEYS = "JC Smart Picks, jcsmartpicks, Amazon finds India, Amazon.in finds, trending gadgets, viral Amazon products, Diwali gifts, Diwali decoration lights, pooja items, home and kitchen gadgets, Telugu Amazon finds, Great Indian Festival picks, budget Amazon finds, premium gadgets India"
 I_IG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>'
 I_YT='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="M10 9l5 3-5 3z" fill="#13254f"/></svg>'
 I_SH='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>'
@@ -91,18 +91,20 @@ h.append(f'<header class="hdr"><div class="wrap"><a class="brand" href="#top" ar
 h.append('<main id="top"><section class="hero"><div class="pts" aria-hidden="true">'+''.join(f'<span class="pt" style="--x:{x};--d:{dd};--w:{wd};--s:{s}">{c}</span>' for x,dd,wd,s,c in PARTICLES)+'</div><div class="wrap"><div>')
 h.append('<span class="kick">🎉 Great Indian Festival · 🪔 Diwali 2026</span>')
 h.append('<h1>JC Smart <em>Picks</em></h1><p class="lead">Trending Amazon.in finds, handpicked for you 🛒</p>')
-h.append('<p class="intro">JC Smart Picks shares handpicked <strong>Amazon finds for India</strong>: <strong>Great Indian Festival</strong> sale picks, trending gadgets, home &amp; kitchen helpers, beauty, toys and <strong>Diwali gifts &amp; décor</strong>, explained in short Telugu videos on Instagram and YouTube. Tap any card to check today\'s price on Amazon.in.</p>')
+h.append('<p class="intro">JC Smart Picks shares handpicked <strong>Amazon finds for India</strong>: <strong>Great Indian Festival</strong> sale picks, budget-friendly buys, premium upgrades, trending gadgets, home &amp; kitchen helpers, beauty, toys and <strong>Diwali gifts &amp; décor</strong>, explained in short Telugu videos on Instagram and YouTube. Tap any card to check today\'s price on Amazon.in.</p>')
 h.append('<p class="te" lang="te">తెలుగులో షార్ట్ వీడియోలు, Instagram &amp; YouTube లో 👇</p>')
 h.append('<div class="ctas"><a class="cta p" href="#picks">Explore today\'s picks ↓</a><a class="cta s" href="#videos">▶ Watch our Shorts</a></div>')
 h.append(f'<div class="stats"><span><b>{total}</b>handpicked finds</span><span><b>{ncat}</b>categories</span><span><b>తెలుగు</b>Shorts &amp; Reels</span></div>')
 h.append(f'</div><div class="art">{DIYA_SVG}</div></div></section>')
 h.append('<div class="wrap">')
 # occasions
-h.append('<section class="sec" aria-labelledby="occ-h"><h2 id="occ-h">Shop by occasion</h2><p class="sub">Quick gift ideas for the festive season</p><div class="occ">'
+h.append('<section class="sec" aria-labelledby="occ-h"><h2 id="occ-h">Shop by occasion</h2><p class="sub">Quick ideas for every budget this festive season</p><div class="occ">'
          '<a class="oc o1 rv" href="#gifts" data-go="occ-amma"><i aria-hidden="true">🎁</i>Gifts for Amma<small>Kitchen, pooja &amp; self-care</small></a>'
          '<a class="oc o2 rv" href="#diwali-decor" data-go="occ-decor"><i aria-hidden="true">🪔</i>Budget Diwali décor<small>Lights, diyas &amp; torans</small></a>'
          '<a class="oc o3 rv" href="#gadgets" data-go="occ-tech"><i aria-hidden="true">🎧</i>Tech gifts<small>Earbuds, watches &amp; more</small></a>'
-         '<a class="oc o4 rv" href="#toys" data-go="occ-kids"><i aria-hidden="true">🧸</i>For kids<small>Toys &amp; fun learning</small></a></div></section>')
+         '<a class="oc o4 rv" href="#toys" data-go="occ-kids"><i aria-hidden="true">🧸</i>For kids<small>Toys &amp; fun learning</small></a>'
+         '<a class="oc o5 rv" href="#budget" data-go="budget"><i aria-hidden="true">💰</i>Budget buys<small>Smart everyday picks</small></a>'
+         '<a class="oc o6 rv" href="#premium" data-go="premium"><i aria-hidden="true">💎</i>Premium upgrades<small>Phones, audio &amp; home tech</small></a></div></section>')
 # toolbar + products
 h.append('<section class="sec" id="picks" aria-labelledby="picks-h"><h2 id="picks-h">Today\'s handpicked finds</h2><p class="sub">Search or tap a category. Every card opens the product on Amazon.in.</p>')
 h.append(f'<div class="tools"><div class="srch" role="search">{I_SEARCH}<label for="q" class="skip">Search products</label><input id="q" type="search" placeholder="Search: diya, lights, earbuds, gift…" autocomplete="off" enterkeyhint="search" aria-describedby="count"><button class="clr" id="clr" type="button" aria-label="Clear search" hidden>✕</button></div>')

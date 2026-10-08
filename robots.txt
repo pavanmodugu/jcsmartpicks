@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pavanmodugu.github.io/jcsmartpicks/sitemap.xml

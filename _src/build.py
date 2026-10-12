@@ -6,19 +6,19 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from products import SECTIONS
 TAG = "jcsmartpick0e-21"
 BASE = "https://pavanmodugu.github.io/jcsmartpicks/"
-UPDATED_ISO = "2026-10-08"
-UPDATED_HUMAN = "8 October 2026"
+UPDATED_ISO = "2026-10-12"
+UPDATED_HUMAN = "12 October 2026"
 OUT = os.path.dirname(HERE)
 VERIFY = '<meta name="google-site-verification" content="OB4e0H9pxlt7TmiGBKKGOR5DMOq12e8H9PZWltPUVYI" />'
 IG = "https://www.instagram.com/jcsmartpicks"; YT = "https://www.youtube.com/@jcsmartpicks"
 VIDEOS = [("https://youtube.com/shorts/WYM-mqx5p74","t1","🎁","Amma ki Diwali Gift Ideas – Top 3 Amazon.in Finds","YouTube Short · Telugu"),
           ("https://youtube.com/shorts/-Fv5NBJ2yGA","t2","🧽","Diwali Cleaning With Just Water? Magic Eraser Find","YouTube Short · Telugu"),
           (IG,"t3","📸","Follow @jcsmartpicks on Instagram","Reels · new finds every week")]
-CHIP = {"featured":"▶ In our videos","sale":"🎉 Sale Picks","budget":"💰 Budget Best","premium":"💎 Premium Picks","diwali-decor":"🪔 Diwali Décor","pooja":"🙏 Pooja","gifts":"🎁 Gifts",
+CHIP = {"featured":"▶ In our videos","sale":"🎉 Sale Picks","budget":"💰 Budget Best","premium":"💎 Premium Picks","washing":"🧺 Washing Machines","diwali-decor":"🪔 Diwali Décor","pooja":"🙏 Pooja","gifts":"🎁 Gifts",
         "home-kitchen":"🏠 Home & Kitchen","gadgets":"🎧 Gadgets","beauty":"💄 Beauty","toys":"🧸 Toys"}
-BADGE = {"featured":"▶ In our videos","sale":"🎉 Sale pick","budget":"💰 Budget best","premium":"💎 Premium","diwali-decor":"🪔 Diwali pick","pooja":"🪔 Diwali pick","gifts":"🎁 Gift idea",
+BADGE = {"featured":"▶ In our videos","sale":"🎉 Sale pick","budget":"💰 Budget best","premium":"💎 Premium","washing":"🧺 Popular pick","diwali-decor":"🪔 Diwali pick","pooja":"🪔 Diwali pick","gifts":"🎁 Gift idea",
          "home-kitchen":"🔥 Trending","gadgets":"🔥 Trending","beauty":"✨ Trending","toys":"🧸 Kids pick"}
-KW = {"featured":"video featured diwali","sale":"great indian festival sale deal offer","budget":"budget affordable cheap value smart buy pocket friendly","premium":"premium luxury upgrade flagship high end","diwali-decor":"diwali deepavali decoration decor lights light festival",
+KW = {"featured":"video featured diwali","sale":"great indian festival sale deal offer","budget":"budget affordable cheap value smart buy pocket friendly","premium":"premium luxury upgrade flagship high end","washing":"washing machine washer laundry clothes fully automatic home appliance","diwali-decor":"diwali deepavali decoration decor lights light festival",
       "pooja":"pooja puja diwali rangoli mandir festival","gifts":"gift gifts hamper present diwali bhai dooj amma sister",
       "home-kitchen":"home kitchen appliance cooking","gadgets":"gadget gadgets tech electronics mobile phone accessories",
       "beauty":"beauty skincare skin care makeup hair","toys":"toys kids children game"}
@@ -45,7 +45,7 @@ JS = mini_js(open(os.path.join(HERE,"app.js"),encoding="utf-8").read())
 # ---- JSON-LD
 items=[]
 for _,_,ps,*_ in SECTIONS:
-    for a,_,n,_ in ps: items.append({"@type":"ListItem","position":len(items)+1,"name":n,"url":link(a)})
+    for a,_,n,_,*_ in ps: items.append({"@type":"ListItem","position":len(items)+1,"name":n,"url":link(a)})
 assert len({i["url"] for i in items})==len(items), "duplicate product"
 ld = {"@context":"https://schema.org","@graph":[
   {"@type":"Organization","@id":BASE+"#org","name":"JC Smart Picks","url":BASE,
@@ -91,7 +91,7 @@ h.append(f'<header class="hdr"><div class="wrap"><a class="brand" href="#top" ar
 h.append('<main id="top"><section class="hero"><div class="pts" aria-hidden="true">'+''.join(f'<span class="pt" style="--x:{x};--d:{dd};--w:{wd};--s:{s}">{c}</span>' for x,dd,wd,s,c in PARTICLES)+'</div><div class="wrap"><div>')
 h.append('<span class="kick">🎉 Great Indian Festival · 🪔 Diwali 2026</span>')
 h.append('<h1>JC Smart <em>Picks</em></h1><p class="lead">Trending Amazon.in finds, handpicked for you 🛒</p>')
-h.append('<p class="intro">JC Smart Picks shares handpicked <strong>Amazon finds for India</strong>: <strong>Great Indian Festival</strong> sale picks, budget-friendly buys, premium upgrades, trending gadgets, home &amp; kitchen helpers, beauty, toys and <strong>Diwali gifts &amp; décor</strong>, explained in short Telugu videos on Instagram and YouTube. Tap any card to check today\'s price on Amazon.in.</p>')
+h.append('<p class="intro">JC Smart Picks shares handpicked <strong>Amazon finds for India</strong>: <strong>Great Indian Festival</strong> sale picks, budget-friendly buys, premium upgrades, washing machines, trending gadgets, home &amp; kitchen helpers, beauty, toys and <strong>Diwali gifts &amp; décor</strong>, explained in short Telugu videos on Instagram and YouTube. Tap any card to check today\'s price on Amazon.in.</p>')
 h.append('<p class="te" lang="te">తెలుగులో షార్ట్ వీడియోలు, Instagram &amp; YouTube లో 👇</p>')
 h.append('<div class="ctas"><a class="cta p" href="#picks">Explore today\'s picks ↓</a><a class="cta s" href="#videos">▶ Watch our Shorts</a></div>')
 h.append(f'<div class="stats"><span><b>{total}</b>handpicked finds</span><span><b>{ncat}</b>categories</span><span><b>తెలుగు</b>Shorts &amp; Reels</span></div>')
@@ -104,7 +104,8 @@ h.append('<section class="sec" aria-labelledby="occ-h"><h2 id="occ-h">Shop by oc
          '<a class="oc o3 rv" href="#gadgets" data-go="occ-tech"><i aria-hidden="true">🎧</i>Tech gifts<small>Earbuds, watches &amp; more</small></a>'
          '<a class="oc o4 rv" href="#toys" data-go="occ-kids"><i aria-hidden="true">🧸</i>For kids<small>Toys &amp; fun learning</small></a>'
          '<a class="oc o5 rv" href="#budget" data-go="budget"><i aria-hidden="true">💰</i>Budget buys<small>Smart everyday picks</small></a>'
-         '<a class="oc o6 rv" href="#premium" data-go="premium"><i aria-hidden="true">💎</i>Premium upgrades<small>Phones, audio &amp; home tech</small></a></div></section>')
+         '<a class="oc o6 rv" href="#premium" data-go="premium"><i aria-hidden="true">💎</i>Premium upgrades<small>Phones, audio &amp; home tech</small></a>'
+         '<a class="oc o7 rv" href="#washing" data-go="washing"><i aria-hidden="true">🧺</i>Home upgrades: washing machines<small>Fully automatic top load &amp; front load</small></a></div></section>')
 # toolbar + products
 h.append('<section class="sec" id="picks" aria-labelledby="picks-h"><h2 id="picks-h">Today\'s handpicked finds</h2><p class="sub">Search or tap a category. Every card opens the product on Amazon.in.</p>')
 h.append(f'<div class="tools"><div class="srch" role="search">{I_SEARCH}<label for="q" class="skip">Search products</label><input id="q" type="search" placeholder="Search: diya, lights, earbuds, gift…" autocomplete="off" enterkeyhint="search" aria-describedby="count"><button class="clr" id="clr" type="button" aria-label="Clear search" hidden>✕</button></div>')
@@ -116,14 +117,15 @@ for sid,title,ps,*note in SECTIONS:
     h.append(f'<section class="cat" id="{sid}" aria-labelledby="h-{sid}"><h2 id="h-{sid}">{html.escape(title,quote=False)}</h2>')
     if note: h.append(f'<p class="note">{html.escape(note[0],quote=False)}</p>')
     h.append('<div class="grid">')
-    for a,ic,n,dsc in ps:
-        s=" ".join([n,dsc,title,KW[sid],CHIP[sid]]).lower()
+    for a,ic,n,dsc,*ex in ps:
+        sub=ex[0] if ex else ""; bdg=ex[1] if len(ex)>1 else BADGE[sid]
+        s=" ".join([n,dsc,sub,title,KW[sid],CHIP[sid]]).lower()
         s=re.sub(r"[^\w\s\-+.&/]"," ",s,flags=re.U); s=re.sub(r"\s+"," ",s).strip()
         h.append(f'<article class="card rv" data-id="{a}" data-cat="{sid}" data-occ="{occ_for(sid,a)}" data-s="{e(s)}">'
-                 f'<div class="tile g-{sid}"><span class="badge">{BADGE[sid]}</span>'
+                 f'<div class="tile g-{sid}"><span class="badge">{bdg}</span>'
                  f'<button class="fav" type="button" data-id="{a}" aria-pressed="false" aria-label="Save {e(n)} to My picks">{HEART}</button>'
                  f'<span class="emo" aria-hidden="true">{ic}</span></div>'
-                 f'<div class="body"><h3>{html.escape(n,quote=False)}</h3><p>{html.escape(dsc,quote=False)}</p>'
+                 f'<div class="body"><h3>{html.escape(n,quote=False)}</h3>'+(f'<span class="spec">{html.escape(sub,quote=False)}</span>' if sub else '')+f'<p>{html.escape(dsc,quote=False)}</p>'
                  f'<a class="buy" href="{link(a)}" target="_blank" rel="sponsored noopener">Check price on Amazon.in →</a></div></article>')
     h.append('</div></section>')
 h.append('<div class="empty" id="empty" hidden><div aria-hidden="true">🔍</div><strong>No picks match <span id="emptyq"></span></strong><p>Try “lights”, “gift”, “diya” or “earbuds”.</p><button class="btn" id="reset" type="button">Show all picks</button></div></section>')

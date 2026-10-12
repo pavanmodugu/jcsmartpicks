@@ -50,6 +50,18 @@ SECTIONS = [
   ("B0F3JL33DW","📺","Xiaomi 55-inch FX Pro 4K QLED Smart TV","4K QLED with HDR10+ and 34 W speakers"),
   ("B0759VDQHL","⌚","Seiko 5 Automatic Blue Dial Men's Watch","Automatic movement, stainless steel, day & date"),
  ], "Premium upgrades worth it — popular choices loved by buyers."),
+ ("washing", "🧺 Washing Machines", [
+  ("B0B8NHX62W","🫧","Samsung 7 kg Eco Bubble Fully Automatic Top Load","Eco Bubble wash with Digital Inverter motor & soft-closing lid","Top load · 7 kg","💰 Budget best"),
+  ("B0HBB6W6GQ","🌊","Haier Smart Choice 6 kg Oceanus Wave Drum Top Load","Wave-drum wash, compact size for small families","Top load · 6 kg","💰 Budget best"),
+  ("B0DPHT2HZL","🔄","LG 7 kg Smart Inverter Fully Automatic Top Load","Smart Inverter motor for quiet, efficient washing","Top load · 7 kg","💰 Budget best"),
+  ("B07F8S7V4Q","🧺","Whirlpool 7 kg Whitemagic Elite Fully Automatic Top Load","Everyday family laundry, simple to use","Top load · 7 kg","💰 Budget best"),
+  ("B0D8LCKY99","✨","IFB 7 kg Deep Clean Fully Automatic Top Load","Deep Clean technology with AI-powered wash programs","Top load · 7 kg","💰 Budget best"),
+  ("B0DG8RPQNS","♨️","LG 7 kg Steam Fully Automatic Front Load","Steam wash with 6 Motion Direct Drive","Front load · 7 kg","🧺 Popular pick"),
+  ("B0DCNVBFCL","🌀","IFB 8 kg Fully Automatic Front Load (Wi-Fi)","9 Swirl Wash & Steam Refresh, Wi-Fi enabled","Front load · 8 kg","🧺 Popular pick"),
+  ("B0F4QQVV1L","💧","LG Smart Choice 7 kg Steam Front Load","Steam with Inverter Direct Drive & 6 Motion DD","Front load · 7 kg","🧺 Popular pick"),
+  ("B0DFLT2Q9W","🫧","IFB 6 kg Fully Automatic Front Load","9 Swirl Wash & Steam Refresh in a compact size","Front load · 6 kg","🧺 Popular pick"),
+  ("B0CC5X35GT","💎","LG Smart Choice 9 kg / 5 kg Washer Dryer","Wash & dry in one, AI Direct Drive with Steam","Washer-dryer · 9 kg wash / 5 kg dry","💎 Premium"),
+ ], "Popular fully automatic picks, from top load to front load — check today's deal on Amazon.in."),
  ("diwali-decor", "🪔 Diwali Décor & Lights", [
   ("B0DFZ579HK","💧","PulGos Water Sensor LED Diyas (36 pcs)","Reusable diyas that glow when placed in water, no smoke"),
   ("B0CVGY985K","🍃","One94Store Leaf Curtain Lights (200 LED, 3×1 m)","Warm-white curtain with remote for windows & walls"),

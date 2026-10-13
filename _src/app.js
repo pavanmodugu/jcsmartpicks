@@ -39,7 +39,7 @@ d.addEventListener('keydown',function(e){if(e.key==='/'&&d.activeElement!==q&&!/
 var P=new URLSearchParams(location.search);if(P.get('q'))q.value=P.get('q');var f0=P.get('f');if(f0&&(f0==='saved'||f0.indexOf('occ-')===0||$$('.chip[data-f="'+f0+'"]').length))cat=f0;
 /* share */
 var url=location.origin+location.pathname;
-$$('[data-share]').forEach(function(b){b.addEventListener('click',function(){var data={title:'JC Smart Picks – Handpicked Amazon.in Finds',text:'Handpicked Amazon.in finds for Diwali & the Great Indian Festival 🪔🛒',url:url};
+$$('[data-share]').forEach(function(b){b.addEventListener('click',function(){var data={title:'JC Smart Picks – Handpicked Finds',text:'Handpicked finds for Diwali & the festival sale 🪔🛒',url:url};
  if(navigator.share){navigator.share(data).catch(function(){})}else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){toast('Link copied – paste it in WhatsApp 👍')},function(){toast(url)})}else{toast(url)}})});
 /* theme */
 var tb=$('#theme');function setTheme(t){h.dataset.theme=t;tb.textContent=t==='dark'?'☀️':'🌙';tb.setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');var m=$('meta[name=theme-color]');if(m)m.content=t==='dark'?'#0d1630':'#13254f'}
